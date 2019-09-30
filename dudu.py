@@ -7,8 +7,8 @@ def checkLoops(n, m):
         arr = [i]
         while len(arr) != 0:
             k = arr.pop()
-            for x in path[k]:
-                if x == i:
+            for x in path[k]: # duyệt tất cả các đường đi có thể đến được đỉnh i
+                if x == i:      # nếu trong tất cả các đỉnh đó lại có i thì đồng nghĩa việc xuất hiện 1 loop
                     return "YES"
                 arr.append(x)
     return "NO"
