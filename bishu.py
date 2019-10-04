@@ -22,14 +22,11 @@ def dfs(n):
 if __name__ == "__main__":
     n = int(input())
     cnt = dfs(n)
-    print(cnt)
     q = int(input())
     girls = [n]*(n+1)
     for i in range(q):
         numOfGirl = int(input())
         girls[numOfGirl] = cnt[numOfGirl]
-    print(cnt)
-    print(girls)
     minDis = min(girls)
     result = n
     for i in range(len(girls)):

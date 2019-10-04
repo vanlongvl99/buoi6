@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(1000000)
+
 
 def recursion(i, visited, graph,fakeVisited, count):
     count += 1
