@@ -1,7 +1,7 @@
 from copy import deepcopy
 import sys
 sys.setrecursionlimit(100000)
-def recursion(k, curPoint, flag):
+def DFS(k, curPoint, flag):
     for i in range(8):
         x = k[0] + dx[i]
         y = k[1] + dy[i]
@@ -12,7 +12,7 @@ def recursion(k, curPoint, flag):
                 if curPoint == len(term):
                     flag = 0
                     return flag
-                flag = recursion([x, y], curPoint, flag)
+                flag = DFS([x, y], curPoint, flag)
                 visited[k[0]][k[1]] = False
                 curPoint = curPoint - 1
     return flag
@@ -39,10 +39,11 @@ if __name__ == "__main__":
         dy = [1, -1, 0, 1, -1, 0, -1, 1 ]
         flag = 1
         for k in A:
-            flag = recursion(k, curPoint, flag)
+            flag = DFS(k, curPoint, flag)
         if flag == 0:
-            print("YES")
+            print("YES\n")
         else:
-            print("NO")
-        print("")
+            print("NO\n")
+        
+        
 
